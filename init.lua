@@ -47,6 +47,8 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 
+vim.g.netrw_list_hide = '.bundle,.expo,.git,.idea,.vscode,node_modules,vendor'
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 -- See https://github.com/folke/lazy.nvim
 -- See `:help lazy.nvim.txt` for more info
