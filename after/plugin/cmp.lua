@@ -1,9 +1,8 @@
-
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
+local cmp = require('cmp')
+local luasnip = require('luasnip')
+
 luasnip.config.setup {}
 
 cmp.setup {
@@ -50,4 +49,3 @@ cmp.setup {
     { name = 'path' },
   },
 }
-

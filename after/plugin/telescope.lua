@@ -1,22 +1,21 @@
 local builtin = require('telescope.builtin')
 
-require('telescope').setup{
-	defaults = {
-		file_ignore_patterns = {
-			".bundle",
-			"node_modules",
-			"vendor"
-		},
-	},
-	pickers = {
-		find_files = {
-			previewer = false,
-			theme = "dropdown",
-		},
-	},
-	extensions = {
-		-- ...
-	}
+require('telescope').setup {
+  defaults = {
+    file_ignore_patterns = {
+      'node_modules',
+      'vendor'
+    },
+  },
+  pickers = {
+    find_files = {
+      previewer = false,
+      theme = 'dropdown',
+    },
+  },
+  extensions = {
+    -- ...
+  }
 }
 
 -- Enable telescope fzf native, if installed
@@ -32,12 +31,14 @@ vim.keymap.set('n', '<leader>/', function()
     previewer = false,
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
+
 local function telescope_live_grep_open_files()
   builtin.live_grep {
     grep_open_files = true,
     prompt_title = 'Live Grep in Open Files',
   }
 end
+
 vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
 vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
 vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
